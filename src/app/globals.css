@@ -1,0 +1,129 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Automata Control Center Theme */
+    --background: 216 67% 98%; /* #F7F9FC */
+    --foreground: 215 28% 17%; /* #212936 - Adjusted for readability */
+
+    --card: 0 0% 100%; /* Soft white */
+    --card-foreground: 215 28% 17%; /* #212936 */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 220 57% 29%; /* #1F3B73 - Deep Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 216 12% 84%; /* Light Gray for secondary elements */
+    --secondary-foreground: 215 28% 17%; /* Dark Gray */
+
+    --muted: 216 12% 90%; /* Lighter Gray for muted backgrounds */
+    --muted-foreground: 216 8% 45%; /* Gray text */
+
+    --accent: 208 79% 63%; /* #5AA9E6 - Light Blue */
+    --accent-foreground: 215 28% 17%; /* Dark Gray on Accent */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 216 12% 88%; /* Slightly darker border */
+    --input: 216 12% 88%; /* Input border */
+    --ring: 208 79% 63%; /* Use Accent for focus rings */
+
+    --radius: 0.5rem; /* 8px */
+
+    /* Chart colors (can be adjusted if needed) */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Sidebar colors (keep defaults or adjust as needed) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Define dark mode colors if needed in the future */
+    --background: 215 28% 17%; /* Dark background */
+    --foreground: 0 0% 98%; /* Light text */
+
+    --card: 215 25% 27%; /* Darker card */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 215 28% 17%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 208 79% 63%; /* Light Blue as primary in dark mode */
+    --primary-foreground: 215 28% 17%; /* Dark text on primary */
+
+    --secondary: 215 16% 47%; /* Darker secondary */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 215 16% 30%; /* Darker muted */
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 220 57% 29%; /* Deep Blue as accent in dark mode */
+    --accent-foreground: 0 0% 98%; /* Light text on accent */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 16% 34%; /* Darker border */
+    --input: 215 16% 34%;
+    --ring: 208 79% 63%; /* Light Blue for focus rings */
+
+    /* Chart colors (dark mode adjustments) */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Sidebar colors (dark mode adjustments) */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), sans-serif; /* Use CSS variable for body font */
+    font-feature-settings: "rlig" 1, "calt" 1; /* Enable common ligatures */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), sans-serif; /* Use CSS variable for heading font */
+  }
+}
+
+@layer components {
+  .card {
+     box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px; /* Apply card shadow */
+  }
+  .btn {
+    @apply shadow-md hover:shadow-lg transition-shadow duration-200; /* Apply button shadow and hover */
+  }
+}
